@@ -16,6 +16,16 @@ RUN apt-get update && \
     libssl-dev \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
+# Install PostgreSQL and create the database
+RUN service postgresql start && \
+    sudo -u postgres psql -c "CREATE DATABASE atm_system;" && \
+    service postgresql stop
+
+# Copy and execute the SQL commands to create tables
+COPY setup.sql /app/setup.sql
+RUN service postgresql start && \
+    sudo -u postgres psql -d atm_system -a -f setup.sql && \
+    service postgresql stop
 
 # Set up a working directory for your application
 WORKDIR /app
