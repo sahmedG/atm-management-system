@@ -1,82 +1,34 @@
-PDCurses
-========
+ATM-MANAGEMENT-SYSTEM
 
-Stable: [v3.9]  
-Current: [See git repository][git]
+This project was developed using C language.
 
-PDCurses is a public domain curses library for [DOS], [OS/2], [Windows]
-console, [X11] and [SDL], implementing most of the functions available in
-[X/Open] and System V R4 curses, and supporting a variety of compilers for
-these platforms. The X11 and SDL ports let you recompile existing
-text-mode curses programs to produce GUI applications.
+The aim of this project is to build a program running on C and postgresql to mimic some functionalities of atm-management-system.
 
-PDCurses is distributed mainly as source code, but some pre-compiled
-libraries may be available.
+Features available in the program:
+1.Register new user.
+2.Login with existing user.
+   2.a. Create new account under the logged in user.
+   2.b. Update information of a specific account.
+   2.c. Check the details of a specific account.
+   2.d. Make a transaction:
+      2.d.a. Deposit to a specific account.
+      2.d.b. Withdraw from a specific account.
+      2.d.c. Transfer money from one account to another.
+   2.e. Check all acounts owned by the user.
+   2.f. Transfer an owned account to another user  > second user will recieve a notification is they were logged in at same time of the transaction.
+   2.g. Delete a specific account.
+   2.h. Exit the program.
 
-The latest version can be found at:
+The program is connected to rational database of type postgresql to hanlde all users and accounts details.
+The program allows the following account types:
+    savings: interest rate 7%
+    fixed01(1 year account): interest rate 4%
+    fixed02(2 year account): interest rate 5%
+    fixed03(3 year account): interest rate 8%
+    If the account is current you must display You will not get interests because the account is of type current
 
-   <https://pdcurses.org/>
+Withdrawing money is allowed only to account types of: Savings and Current.
 
-For changes, see the [History] file. The main documentation is now in the
-[docs] directory.
+Terminal was modified using ncurses library to enhance the user experience.
 
-
-Mailing lists
--------------
-
-There's a low-traffic mailing list for announcements and discussion. To
-subscribe, email the [list server], with the first line of the body of
-the message containing:
-
-`subscribe pdcurses-l`
-
-or you can read the mailing list [archive].
-
-
-Other links
------------
-
-* [Docs][docs]
-* [GitHub Page][git]
-* [SourceForge Page]
-* [X/Open] curses
-
-
-Legal Stuff
------------
-
-The core package and most ports are in the public domain, but a few files
-in the [demos] and [X11][xstatus] directories are subject to copyright
-under licenses described there.
-
-This software is provided AS IS with NO WARRANTY whatsoever.
-
-
-Maintainer
-----------
-
-[William McBrine]
-
-
-[v3.9]: https://github.com/wmcbrine/PDCurses/releases/tag/3.9
-[git]: https://github.com/wmcbrine/PDCurses
-
-[History]: docs/HISTORY.md
-[docs]: docs/README.md
-
-[list server]: mailto:majordomo@lightlink.com
-[archive]: https://www.mail-archive.com/pdcurses-l@lightlink.com/
-
-[SourceForge Page]: https://sourceforge.net/projects/pdcurses
-[X/Open]: https://pubs.opengroup.org/onlinepubs/007908799/cursesix.html
-
-[DOS]: dos/README.md
-[OS/2]: os2/README.md
-[SDL]: sdl2/README.md
-[Windows]: wincon/README.md
-[X11]: x11/README.md
-
-[demos]: demos/README.md#distribution-status
-[xstatus]: x11/README.md#distribution-status
-
-[William McBrine]: https://wmcbrine.com/
+Thank you.
