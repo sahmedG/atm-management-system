@@ -31,4 +31,8 @@ Withdrawing money is allowed only to account types of: Savings and Current.
 
 Terminal was modified using ncurses library to enhance the user experience.
 
+Docker file is included to install all dependencies:
+docker build -t your-image-name . // to build the image
+docker run -d -p 8080:8080 --name your-container-name your-image-name // to run the image
+
 Thank you.
