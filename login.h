@@ -1,5 +1,5 @@
-#include <openssl/evp.h>
-#include <openssl/sha.h>
+// #include <openssl/evp.h>
+// #include <openssl/sha.h>
 #include <pthread.h>
 #include <sqlite3.h>
 #include <stdbool.h>
