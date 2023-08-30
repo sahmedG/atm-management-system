@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/sam/C programming/atm-management-system",
-      "program": "/home/sam/C programming/atm-management-system/build/Debug/outDebug",
+      "cwd": "/home/sam/atm-audit/atm-management-system",
+      "program": "/home/sam/atm-audit/atm-management-system/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

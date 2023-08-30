@@ -1,4 +1,6 @@
 #include "login.h"
+#include <curses.h>
+#include <postgresql/libpq-fe.h>
 
 void registerUser(PGconn *conn) {
   char query[MAX_LENGTH + 200];
@@ -39,7 +41,9 @@ void registerUser(PGconn *conn) {
     initMenu(conn);
   } else {
     printw("Error registering user. A similar username may already exist.\n");
-    exit(0);
+    printw("press enter to return");
+    getch();
+    initMenu(conn);
   }
 
   PQclear(res);

@@ -31,8 +31,8 @@ int deleteAccount(PGconn *conn, int user_id) {
   } else {
     char delete_transactions_query[MAX_LENGTH];
     sprintf(delete_transactions_query,
-            "DELETE FROM transactions WHERE to_account_number = %d",
-            accountNumber);
+            "DELETE FROM transactions WHERE from_account_number = %d or to_account_number = %d",
+            accountNumber,accountNumber);
     res = PQexec(conn, delete_transactions_query);
     if (PQresultStatus(res) != PGRES_COMMAND_OK) {
       PQclear(res);
