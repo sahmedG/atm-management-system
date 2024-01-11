@@ -1,38 +1,48 @@
-ATM-MANAGEMENT-SYSTEM
+# ATM MANAGEMENT SYSTEM
 
-This project was developed using C language.
+Welcome to the ATM Management System repository! This C++ program provides a simulation of an ATM system, allowing users to perform various banking operations. Whether you are interested in learning C++ programming or exploring how an ATM system works at a code level, this project is a great resource.
 
-The aim of this project is to build a program running on C and postgresql to mimic some functionalities of atm-management-system.
+## Features
 
-Features available in the program:
-1.Register new user.
-2.Login with existing user.
-   2.a. Create new account under the logged in user.
-   2.b. Update information of a specific account.
-   2.c. Check the details of a specific account.
-   2.d. Make a transaction:
-      2.d.a. Deposit to a specific account.
-      2.d.b. Withdraw from a specific account.
-      2.d.c. Transfer money from one account to another.
-   2.e. Check all acounts owned by the user.
-   2.f. Transfer an owned account to another user  > second user will recieve a notification is they were logged in at same time of the transaction.
-   2.g. Delete a specific account.
-   2.h. Exit the program.
+- User authentication with PIN
+- Balance inquiry
+- Cash withdrawal
+- Deposit funds
+- Transfer funds between accounts
+- View transaction history
+  
+Features
 
-The program is connected to rational database of type postgresql to hanlde all users and accounts details.
-The program allows the following account types:
-    savings: interest rate 7%
-    fixed01(1 year account): interest rate 4%
-    fixed02(2 year account): interest rate 5%
-    fixed03(3 year account): interest rate 8%
-    If the account is current you must display You will not get interests because the account is of type current
+    The Registration feature, you must be able to register new users, users with the same name can not exist (names must be unique). They must be saved in the right file.
 
-Withdrawing money is allowed only to account types of: Savings and Current.
+    The Update information of existing account feature, users must be able to update their country or phone number.
 
-Terminal was modified using ncurses library to enhance the user experience.
+    2.1. You must ask users to input the account id they want to change, followed by a prompt asking which field they want to also change (the only fields that are permitted to update is the phone number and the country).
 
-Docker file is included to install all dependencies:
-docker build -t your-image-name . // to build the image
-docker run -d -p 8080:8080 --name your-container-name your-image-name // to run the image
+    2.2. Whenever users update an account, it must be saved into the corresponding file.
 
-Thank you.
+    The Checking the details of existing accounts feature, users must be able to check just one account at a time.
+
+    3.1. For this they must be asked to input the account id they want to see
+
+    3.2. If the account is either savings, fixed01, fixed02 and fixed03 the system will display the information of that account and the interest you will acquire depending on the account:
+        savings: interest rate 7%
+        fixed01(1 year account): interest rate 4%
+        fixed02(2 year account): interest rate 5%
+        fixed03(3 year account): interest rate 8%
+        If the account is current you must display You will not get interests because the account is of type current
+
+    For example: for an account of type savings with a deposit date of 10/10/2002 and an amount of $1023.20 the system will show "You will get $5.97 as interest on day 10 of every month".
+
+    The Make transaction feature, users must be able to create transactions, withdrawing or depositing money to a certain account. All transactions must be updated and saved into the corresponding file. Accounts of type fixed01, fixed02 and fixed03 are not allowed to make transactions and an error message should be displayed if transactions are attempted with these accounts.
+
+    The Remove existing account feature, users must be able to delete their own account, the same must happen here, updates must be saved into the corresponding file.
+
+    The Transfer owner feature, users can transfer their account to another user, by:
+
+    6.1. Identifying the account and the user they want to transfer the ownership to
+
+    6.2. Saving the information in the corresponding file
+
+    Encryption of passwords
+    Adding your own Makefile
