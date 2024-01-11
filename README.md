@@ -1,6 +1,7 @@
 # ATM MANAGEMENT SYSTEM
 
-                                                      ![image](https://codewithcurious.com/wp-content/uploads/2022/11/Handwritten-Notes-28.png)
+![image](https://codewithcurious.com/wp-content/uploads/2022/11/Handwritten-Notes-28.png)
+
 Welcome to the ATM Management System repository! This C++ program provides a simulation of an ATM system, allowing users to perform various banking operations. Whether you are interested in learning C++ programming or exploring how an ATM system works at a code level, this project is a great resource.
 
 ## Features
